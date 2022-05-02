@@ -1,5 +1,6 @@
 // Place your server entry point code here
 const express = require("express")
+app.use(express.json());
 const app = express()
 const args = require('minimist')(process.argv.slice(2));
 const db = require("./database.js")
@@ -137,7 +138,7 @@ app.get("/app/flip/", (req, res) => {
 })
 
 app.get('/app/flips/:number', (req, res) => {
-    const raw = coinFlips(req.params.number);
+    const raw = coinFlips(req.body.number);
     const summary = countFlips(raw);
     res.status(200).json({
         "raw": raw,
