@@ -1,6 +1,6 @@
 // Place your server entry point code here
 const express = require("express")
-app.use(express.json());
+
 const app = express()
 const args = require('minimist')(process.argv.slice(2));
 const db = require("./database.js")
@@ -11,6 +11,7 @@ app.use(express.json());
 const morgan = require('morgan');
 const fs = require('fs');
 console.log(args)
+app.use(express.json());
 const help = (`
 server.js [options]
 
