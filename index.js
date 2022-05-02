@@ -3,7 +3,7 @@ const express = require("express")
 
 const app = express()
 const args = require('minimist')(process.argv.slice(2));
-const db = require("./database.js")
+const db = require("./src/services/database.js")
 const port = args["port"] || 5000
 args['port', 'help', 'debug', 'log']
 app.use(express.urlencoded({ extended: true }));
