@@ -76,6 +76,8 @@ if (args.log) {
 // Use morgan for logging to files
 // Create a write stream to append (flags: 'a') to a file
 
+app.use(express.static('./public'));
+
     function coinFlip() {
 	var randInt = Math.floor(Math.random()*2);
 	if(randInt == 1){
